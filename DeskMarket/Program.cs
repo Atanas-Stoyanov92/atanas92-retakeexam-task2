@@ -39,8 +39,7 @@ namespace DeskMarket
                 var services = scope.ServiceProvider;
                 
                 var context = services.GetRequiredService<ApplicationDbContext>();
-                context.Database.EnsureCreated();
-                context.Database.Migrate();
+                context.Invoke().Initializa();
                 
                 CategorySeeder.Seed(services);
             }
