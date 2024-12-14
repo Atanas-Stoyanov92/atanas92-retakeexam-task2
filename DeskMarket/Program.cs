@@ -40,6 +40,7 @@ namespace DeskMarket
                 
                 var context = services.GetRequiredService<ApplicationDbContext>();
                 context.Database.EnsureCreated();
+                context.Database.Migrate();
                 
                 CategorySeeder.Seed(services);
             }
