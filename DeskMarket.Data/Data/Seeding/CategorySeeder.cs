@@ -8,7 +8,7 @@ namespace DeskMarket.Data.Data.Seeding
     {
         public static void Seed(IServiceProvider serviceProvider)
         {
-            using (var context = services.GetRequiredService<ApplicationDbContext>())
+            using (var context = serviceProvider.GetRequiredService<ApplicationDbContext>())
             {
                 if (context.Categories.Any())
                 {
